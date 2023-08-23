@@ -1,0 +1,11 @@
+# just create OU example (initial settings)
+
+dn: ou=users,dc=example,dc=com
+objectClass: organizationalUnit
+ou: users
+description: Users Organizational Unit
+
+dn: ou=groups,dc=example,dc=com
+objectClass: organizationalUnit
+ou: groups
+description: Groups Organizational Unit
