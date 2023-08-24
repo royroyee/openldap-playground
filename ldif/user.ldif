@@ -1,0 +1,11 @@
+dn: uid=ldap-user1,ou=users,dc=example,dc=com
+objectClass: inetOrgPerson
+objectClass: posixAccount
+objectClass: top
+uid: ldap-user1
+sn: ldap-user1
+cn: ldap-user1 ldap-user1
+uidNumber: 3000
+gidNumber: 2000
+homeDirectory: /home/ldap-user1
+mail: ldap-user1@test.com

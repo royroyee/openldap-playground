@@ -14,8 +14,9 @@ Data persistence ensures that data is retained even after a container is stopped
 ```shell
 sudo mkdir -p /data/slapd/config
 sudo mkdir /data/slapd/database
+```
 Set the right permissions.
-
+````
 sudo chmod 775 -R /data/slapd
 sudo chown -R $USER:docker /data/slapd
 ```

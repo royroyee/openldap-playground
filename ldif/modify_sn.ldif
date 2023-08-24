@@ -1,0 +1,4 @@
+dn: uid=ldap-user1,ou=users,dc=example,dc=com
+changetype: modify
+replace: sn
+sn: test
