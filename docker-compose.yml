@@ -26,37 +26,37 @@ services:
       LDAP_BACKEND: "mdb"
       LDAP_TLS: "false"
       LDAP_TLS_VERIFY_CLIENT: never
-#      LDAP_TLS_CRT_FILENAME: "ldap.crt"
-#      LDAP_TLS_KEY_FILENAME: "ldap.key"
-#      LDAP_TLS_CA_CRT_FILENAME: "ca.crt"
-#      LDAP_TLS_ENFORCE: "false"
-#      LDAP_TLS_CIPHER_SUITE: "SECURE256:-VERS-SSL3.0"
-#      LDAP_TLS_PROTOCOL_MIN: "3.1"
-#      LDAP_REPLICATION: "false"
-#      KEEP_EXISTING_CONFIG: "false"
-#      LDAP_REMOVE_CONFIG_AFTER_SETUP: "true"
-#      LDAP_SSL_HELPER_PREFIX: "ldap"
-     #  LDAP_LOG_FILE: "/var/log/slapd.log"
-#    tty: true
-#    stdin_open: true
-#    networks:
-#      - openldap-network
+      LDAP_TLS_CRT_FILENAME: "ldap.crt"
+      LDAP_TLS_KEY_FILENAME: "ldap.key"
+      LDAP_TLS_CA_CRT_FILENAME: "ca.crt"
+      LDAP_TLS_ENFORCE: "false"
+      LDAP_TLS_CIPHER_SUITE: "SECURE256:-VERS-SSL3.0"
+      LDAP_TLS_PROTOCOL_MIN: "3.1"
+      LDAP_REPLICATION: "false"
+      KEEP_EXISTING_CONFIG: "false"
+      LDAP_REMOVE_CONFIG_AFTER_SETUP: "true"
+      LDAP_SSL_HELPER_PREFIX: "ldap"
+      LDAP_LOG_FILE: "/var/log/slapd.log"
+    tty: true
+    stdin_open: true
+    networks:
+      - openldap-network
 
-#  phpldapadmin:
-#    image: osixia/phpldapadmin:latest
-#    container_name: phpldapadmin
-#    hostname: phpldapadmin
-#    ports:
-#      - "8443:443"
-#    environment:
-#      TZ: "${TZ}"
-#      PHPLDAPADMIN_LDAP_HOSTS: "openldap-server"
-#      PHPLDAPADMIN_HTTPS: "true"
-#    depends_on:
-#      - openldap
-#    networks:
-#      - openldap-network
+  phpldapadmin:
+    image: osixia/phpldapadmin:latest
+    container_name: phpldapadmin
+    hostname: phpldapadmin
+    ports:
+      - "8443:443"
+    environment:
+      TZ: "${TZ}"
+      PHPLDAPADMIN_LDAP_HOSTS: "openldap-server"
+      PHPLDAPADMIN_HTTPS: "true"
+    depends_on:
+      - openldap
+    networks:
+      - openldap-network
 
-#networks:
-#  openldap-network:
-#    driver: bridge
+networks:
+  openldap-network:
+    driver: bridge
