@@ -1,0 +1,4 @@
+dn: cn=module{0},cn=config
+cn: module{0}
+objectClass: olcModuleList
+olcModuleLoad: refint

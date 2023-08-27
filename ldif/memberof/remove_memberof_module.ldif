@@ -1,0 +1,4 @@
+# remove_memberof_module.ldif
+
+dn: cn=module{1},cn=config
+changetype: delete
