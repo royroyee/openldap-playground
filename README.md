@@ -68,3 +68,34 @@ After the above configuration is complete, the volumes can be defined and used a
       - ./data/slapd/database:/var/lib/ldap
       - ./data/slapd/config:/etc/ldap/slapd.d
 ```
+
+## Organization Unit
+In LDAP (Lightweight Directory Access Protocol), an Organizational Unit (OU) serves as a container concept that facilitates the creation of a hierarchical structure within the directory service.
+
+An OU is utilized to categorize and manage various objects within the directory, such as users, groups, computers, and other entities.
+
+### Roles of OU
+- Logical Structuring : Enables logical grouping and hierarchical organization of objects within the directory.
+
+- Access Control : Enhances security by allowing or restricting access permissions specifically for certain OUs.
+
+- Policy Implementation : Allows the application of specific policies to an OU, enabling consistent settings and restrictions for all objects residing under it.
+
+### Prerequisites for Using OUs in LDAP
+It's important to note that LDAP employs a hierarchical structure, requiring a parent object to exist when creating a new object.
+
+Failing to meet this requirement will lead to errors such as "No Such Object."
+
+
+If you're planning to create users and groups, you should pre-define the appropriate OUs as follows. (Refer to ldif/create_ou.ldif for more details)
+```bash
+dn: ou=users,dc=example,dc=com
+objectClass: organizationalUnit
+ou: users
+description: Users Organizational Unit
+
+dn: ou=groups,dc=example,dc=com
+objectClass: organizationalUnit
+ou: groups
+description: Groups Organizational Unit
+```
